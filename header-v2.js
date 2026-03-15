@@ -34,8 +34,8 @@
  var SHOP = 'https://shop.grabbi.uk';
  var headerHTML =
  '<div id="g-announce">'+
- '<span id="g-ann-full">🚴 <span class="hl">Free delivery</span> on orders over £25 · Open 7am–10pm · 7 days a week</span>'+
- '<span id="g-ann-short">🚴 <span class="hl">Free delivery</span> over £25 · Open 7am–10pm</span>'+
+ '<span id="g-ann-full">♻️ <span class="hl">Free delivery</span> on orders over £25 · Open 7am–10pm · 7 days a week</span>'+
+ '<span id="g-ann-short">♻️ <span class="hl">Free delivery</span> over £25 · Open 7am–10pm</span>'+
  '</div>'+
  '<header id="g-header">'+
  '<div id="g-hi">'+
