@@ -133,8 +133,6 @@
 '<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
 '</div>'+
  '<div class="gmd"></div>'+
- '<a href="/world-food-delivery" class="gmr">World Foods 🌍</a>'+
- '<div class="gmd"></div>'+
  '<a href="/about-grabbi" class="gmr">About</a>'+
  '<div class="gmd"></div>'+
  '<a href="/grabbi-sustainable-grocery-delivery" class="gmr">Sustainability</a>'+
@@ -207,7 +205,18 @@
  }else{vb.style.display='none';}
  var hbtn=document.getElementById('g-hb'),mm=document.getElementById('g-mm');
  hbtn.addEventListener('click',function(){hbtn.classList.add('open');mm.classList.add('open');document.body.style.overflow='hidden';});
- document.getElementById('g-mc').addEventListener('click',function(){hbtn.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';});
+ document.getElementById('g-mc').addEventListener('click',function(){
+    hbtn.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';
+    // Reset all accordions when closing menu
+    var wfs=document.getElementById('g-wfs');
+    var wfa=document.getElementById('g-wfa');
+    var gas=document.getElementById('g-as');
+    var gaa=document.getElementById('g-aa');
+    if(wfs)wfs.classList.remove('open');
+    if(wfa)wfa.textContent='▾';
+    if(gas)gas.classList.remove('open');
+    if(gaa)gaa.textContent='▾';
+  });
  document.getElementById('g-wft').addEventListener('click',function(){
     var s=document.getElementById('g-wfs'),a=document.getElementById('g-wfa');
     s.classList.toggle('open');a.textContent=s.classList.contains('open')?'▴':'▾';
