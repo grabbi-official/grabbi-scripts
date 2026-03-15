@@ -103,8 +103,8 @@
  '<a href="/" id="g-ml"><img src="'+LOGO+'" alt="Grabbi" height="34"></a>'+
  '<button id="g-mc">✕</button>'+
  '</div>'+
- '<div id="g-mn">'+
- '<a href="'+SHOP+'" class="gmr" target="_blank">Shop <span class="gbg gbg-g">Order Now</span></a>'+
+ '<div id="g-mn" style="padding-top:8px">'+
+ '<a href="'+SHOP+'" class="gmr" target="_blank" style="margin-top:4px">Shop <span class="gbg gbg-g">Order Now</span></a>'+
  '<div class="gmd"></div>'+
  '<div class="gmr" id="g-at">Delivery Areas <span id="g-aa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
  '<div class="gms" id="g-as">'+
