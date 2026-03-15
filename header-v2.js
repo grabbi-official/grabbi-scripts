@@ -60,15 +60,15 @@
  '<li class="gni">'+
  '<a href="/world-food-delivery" class="gnl">World Foods 🌍 <span class="garr">▾</span></a>'+
  '<ul class="gdrop">'+
- '<li><a href="/indian-grocery-delivery" class="gdl">🇮🇳 Indian</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/chinese" class="gdl">🇨🇳 Chinese</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/filipino" class="gdl">🇵🇭 Filipino</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/sri-lankan" class="gdl">🇱🇰 Sri Lankan</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/caribbean" class="gdl">🇯🇲 Caribbean</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/african" class="gdl">🌍 African</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/japanese-korean" class="gdl">🇯🇵 Japanese & Korean</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/middle-eastern" class="gdl">🇱🇧 Middle Eastern</a></li>'+
- '<li><a href="https://shop.grabbi.uk/category/eastern-european" class="gdl">🇵🇱 Eastern European</a></li>'+
+ '<li><a href="/indian-grocery-delivery-uk" class="gdl">🇮🇳 Indian</a></li>'+
+ '<li><a href="/chinese-grocery-delivery-uk" class="gdl">🇨🇳 Chinese</a></li>'+
+ '<li><a href="/filipino-grocery-delivery-uk" class="gdl">🇵🇭 Filipino</a></li>'+
+ '<li><a href="/sri-lankan-grocery-delivery-uk" class="gdl">🇱🇰 Sri Lankan</a></li>'+
+ '<li><a href="/caribbean-grocery-delivery-uk" class="gdl">🇯🇲 Caribbean</a></li>'+
+ '<li><a href="/african-grocery-delivery-uk" class="gdl">🌍 African</a></li>'+
+ '<li><a href="/japanese-korean-grocery-delivery-uk" class="gdl">🇯🇵 Japanese & Korean</a></li>'+
+ '<li><a href="/middle-eastern-grocery-delivery-uk" class="gdl">🇱🇧 Middle Eastern</a></li>'+
+ '<li><a href="/eastern-european-grocery-delivery-uk" class="gdl">🇵🇱 Eastern European</a></li>'+
  '<li><a href="/world-food-delivery" class="gdl" style="color:var(--gg);font-weight:700">All World Foods →</a></li>'+
  '</ul>'+
  '</li>'+
