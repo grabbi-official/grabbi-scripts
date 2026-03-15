@@ -57,7 +57,21 @@
  '<li><a href="/grocery-delivery-pencoed" class="gdl">Pencoed <span class="gdb">Soon</span></a></li>'+
  '</ul>'+
  '</li>'+
- '<li class="gni"><a href="/indian-grocery-delivery" class="gnl">Indian Groceries <span class="gnd"></span></a></li>'+
+ '<li class="gni">'+
+ '<a href="/world-food-delivery" class="gnl">World Foods 🌍 <span class="garr">▾</span></a>'+
+ '<ul class="gdrop">'+
+ '<li><a href="/indian-grocery-delivery" class="gdl">🇮🇳 Indian</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/chinese" class="gdl">🇨🇳 Chinese</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/filipino" class="gdl">🇵🇭 Filipino</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/sri-lankan" class="gdl">🇱🇰 Sri Lankan</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/caribbean" class="gdl">🇯🇲 Caribbean</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/african" class="gdl">🌍 African</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/japanese-korean" class="gdl">🇯🇵 Japanese & Korean</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/middle-eastern" class="gdl">🇱🇧 Middle Eastern</a></li>'+
+ '<li><a href="https://shop.grabbi.uk/category/eastern-european" class="gdl">🇵🇱 Eastern European</a></li>'+
+ '<li><a href="/world-food-delivery" class="gdl" style="color:var(--gg);font-weight:700">All World Foods →</a></li>'+
+ '</ul>'+
+ '</li>'+
  '<li class="gni"><a href="/about-grabbi" class="gnl">About</a></li>'+
  '<li class="gni"><a href="/grabbi-sustainable-grocery-delivery" class="gnl">Sustainability</a></li>'+
  '<li class="gni"><a href="/grabbi-franchise-opportunity" class="gnl">Franchise <span class="gbg gbg-l">Join Us</span></a></li>'+
@@ -105,7 +119,19 @@
  '<a href="/grocery-delivery-pencoed" class="gmsl">Pencoed <span class="gbg gbg-l" style="margin-left:6px">Soon</span></a>'+
  '</div>'+
  '<div class="gmd"></div>'+
- '<a href="/indian-grocery-delivery" class="gmr">Indian Groceries</a>'+
+ '<div class="gmr" id="g-wft">🌍 World Foods <span id="g-wfa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
+'<div class="gms" id="g-wfs">'+
+'<a href="/indian-grocery-delivery" class="gmsl">🇮🇳 Indian</a>'+
+'<a href="https://shop.grabbi.uk/category/chinese" class="gmsl">🇨🇳 Chinese</a>'+
+'<a href="https://shop.grabbi.uk/category/filipino" class="gmsl">🇵🇭 Filipino</a>'+
+'<a href="https://shop.grabbi.uk/category/sri-lankan" class="gmsl">🇱🇰 Sri Lankan</a>'+
+'<a href="https://shop.grabbi.uk/category/caribbean" class="gmsl">🇯🇲 Caribbean</a>'+
+'<a href="https://shop.grabbi.uk/category/african" class="gmsl">🌍 African</a>'+
+'<a href="https://shop.grabbi.uk/category/japanese-korean" class="gmsl">🇯🇵 Japanese & Korean</a>'+
+'<a href="https://shop.grabbi.uk/category/middle-eastern" class="gmsl">🇱🇧 Middle Eastern</a>'+
+'<a href="https://shop.grabbi.uk/category/eastern-european" class="gmsl">🇵🇱 Eastern European</a>'+
+'<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
+'</div>'+
  '<div class="gmd"></div>'+
  '<a href="/world-food-delivery" class="gmr">World Foods 🌍</a>'+
  '<div class="gmd"></div>'+
@@ -182,7 +208,11 @@
  var hbtn=document.getElementById('g-hb'),mm=document.getElementById('g-mm');
  hbtn.addEventListener('click',function(){hbtn.classList.add('open');mm.classList.add('open');document.body.style.overflow='hidden';});
  document.getElementById('g-mc').addEventListener('click',function(){hbtn.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';});
- document.getElementById('g-at').addEventListener('click',function(){
+ document.getElementById('g-wft').addEventListener('click',function(){
+    var s=document.getElementById('g-wfs'),a=document.getElementById('g-wfa');
+    s.classList.toggle('open');a.textContent=s.classList.contains('open')?'▴':'▾';
+  });
+  document.getElementById('g-at').addEventListener('click',function(){
  var s=document.getElementById('g-as'),a=document.getElementById('g-aa');
  s.classList.toggle('open');a.textContent=s.classList.contains('open')?'▴':'▾';
  });
