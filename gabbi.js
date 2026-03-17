@@ -17,56 +17,73 @@ document.head.appendChild(f);
 var s = document.createElement('style');
 s.textContent = [
   ':root{--gg:#1A5C35;--gl:#B5E550;--gd:#111B14;--gb:#FAF7F0}',
-  '#gabbi-btn{position:fixed;bottom:24px;left:20px;width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;padding:0;',
-    'box-shadow:0 6px 24px rgba(26,92,53,0.4);z-index:2147483640;overflow:hidden;',
-    'transition:all .25s;animation:gabbi-bob 3s ease infinite;}',
+
+  /* =====================================================
+     GABBI LAUNCHER BUTTON
+     FIX 1: bottom:20px to match basket + app btn baseline
+     FIX 2: white background with padding so logo never clips
+     FIX 3: removed bobbing animation (caused misalignment)
+     ===================================================== */
+  '#gabbi-btn{position:fixed;bottom:20px;left:20px;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;padding:0;',
+    'background:#fff;',
+    'box-shadow:0 4px 20px rgba(26,92,53,0.35);z-index:2147483640;overflow:visible;',
+    'transition:transform .25s,box-shadow .25s;}',
   '#gabbi-btn:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(26,92,53,0.5)}',
-  '#gabbi-btn.open{animation:none}',
-  '#gabbi-btn img{width:100%;height:100%;object-fit:cover;display:block}',
-  '#gabbi-badge{position:absolute;top:-2px;right:-2px;width:20px;height:20px;border-radius:50%;',
+  /* Inner circle — green ring with white pad so logo sits cleanly */
+  '#gabbi-btn-inner{width:56px;height:56px;border-radius:50%;overflow:hidden;',
+    'border:2.5px solid var(--gg);background:#fff;',
+    'display:flex;align-items:center;justify-content:center;}',
+  '#gabbi-btn-inner img{width:78%;height:78%;object-fit:contain;display:block;}',
+
+  '#gabbi-badge{position:absolute;top:-3px;right:-3px;width:20px;height:20px;border-radius:50%;',
     'background:var(--gl);color:var(--gd);font-size:10px;font-weight:800;',
     'display:flex;align-items:center;justify-content:center;border:2px solid #fff;',
-    'animation:gabbi-ping 2s ease infinite}',
+    'animation:gabbi-ping 2s ease infinite;z-index:1;}',
   '#gabbi-badge.hide{display:none}',
-  '@keyframes gabbi-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}',
   '@keyframes gabbi-ping{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}',
-  '#gabbi-win{position:fixed;bottom:96px;left:20px;width:calc(100vw - 40px);max-width:370px;',
+
+  '#gabbi-win{position:fixed;bottom:88px;left:20px;width:calc(100vw - 40px);max-width:370px;',
     'height:500px;max-height:calc(100vh - 120px);background:#fff;border-radius:20px;',
     'box-shadow:0 24px 64px rgba(17,27,20,0.18);z-index:2147483639;',
     'display:flex;flex-direction:column;overflow:hidden;',
     'transform:translateY(16px) scale(0.96);opacity:0;pointer-events:none;',
     'transition:all .28s cubic-bezier(.16,1,.3,1);transform-origin:bottom left}',
   '#gabbi-win.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}',
+
   '#gabbi-head{background:var(--gd);padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}',
-  '#gabbi-himg{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--gl);flex-shrink:0}',
+  '#gabbi-himg{width:38px;height:38px;border-radius:50%;object-fit:contain;border:2px solid var(--gl);flex-shrink:0;background:#fff;padding:3px;}',
   '#gabbi-hinfo{flex:1}',
   '#gabbi-hname{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:17px;text-transform:uppercase;color:#fff;line-height:1}',
   '#gabbi-hsub{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;display:flex;align-items:center;gap:4px}',
   '#gabbi-dot{width:6px;height:6px;border-radius:50%;background:#4caf50}',
   '#gabbi-x{background:rgba(255,255,255,0.1);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}',
+
   '#gabbi-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}',
   '#gabbi-msgs::-webkit-scrollbar{width:3px}',
   '#gabbi-msgs::-webkit-scrollbar-thumb{background:rgba(17,27,20,0.1);border-radius:2px}',
   '.gm{display:flex;gap:8px;animation:gm-in .25s ease}',
   '@keyframes gm-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}',
   '.gm.u{flex-direction:row-reverse}',
-  '.gm-av{width:30px;height:30px;border-radius:50%;flex-shrink:0;overflow:hidden;margin-top:2px}',
-  '.gm-av img{width:100%;height:100%;object-fit:cover}',
-  '.gm.u .gm-av{background:rgba(17,27,20,0.08);display:flex;align-items:center;justify-content:center;font-size:14px}',
+  '.gm-av{width:30px;height:30px;border-radius:50%;flex-shrink:0;overflow:hidden;margin-top:2px;background:#fff;display:flex;align-items:center;justify-content:center;}',
+  '.gm-av img{width:80%;height:80%;object-fit:contain;}',
+  '.gm.u .gm-av{background:rgba(17,27,20,0.08);font-size:14px}',
   '.gm-bub{max-width:82%;background:var(--gb);border-radius:16px 16px 16px 4px;padding:9px 13px;font-size:13px;line-height:1.6;color:var(--gd)}',
   '.gm.u .gm-bub{background:var(--gg);color:#fff;border-radius:16px 16px 4px 16px}',
+
   '#gabbi-qr{padding:6px 14px 0;display:flex;flex-wrap:wrap;gap:5px;flex-shrink:0}',
   '.gqr{background:var(--gb);border:1px solid rgba(17,27,20,0.12);color:var(--gd);font-size:11px;font-weight:600;',
     'padding:5px 11px;border-radius:100px;cursor:pointer;white-space:nowrap;transition:all .15s}',
   '.gqr:hover{background:var(--gg);color:#fff;border-color:var(--gg)}',
+
   '#gabbi-typing{display:none;padding:0 14px 4px}',
   '#gabbi-typing.show{display:flex;align-items:center;gap:8px}',
-  '#gabbi-typing .gm-av{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0}',
-  '#gabbi-typing .gm-av img{width:100%;height:100%;object-fit:cover}',
+  '#gabbi-typing .gm-av{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;background:#fff;}',
+  '#gabbi-typing .gm-av img{width:80%;height:80%;object-fit:contain;}',
   '.gdots{display:flex;gap:3px;background:var(--gb);padding:10px 14px;border-radius:16px 16px 16px 4px}',
   '.gdots span{width:6px;height:6px;border-radius:50%;background:rgba(17,27,20,0.3);animation:gd 1.2s ease infinite}',
   '.gdots span:nth-child(2){animation-delay:.2s}.gdots span:nth-child(3){animation-delay:.4s}',
   '@keyframes gd{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}',
+
   '#gabbi-inp-row{padding:10px 12px;display:flex;gap:8px;align-items:flex-end;border-top:1px solid rgba(17,27,20,0.07);flex-shrink:0;background:#fff}',
   '#gabbi-inp{flex:1;border:1.5px solid rgba(17,27,20,0.1);border-radius:12px;padding:9px 13px;',
     'font-family:"Barlow",sans-serif;font-size:14px;color:var(--gd);outline:none;resize:none;',
@@ -77,18 +94,23 @@ s.textContent = [
   '#gabbi-send:hover{background:#145028}',
   '#gabbi-send:disabled{background:rgba(17,27,20,0.15);cursor:not-allowed}',
   '#gabbi-foot{text-align:center;font-size:10px;color:rgba(17,27,20,0.25);padding:5px 0 8px;flex-shrink:0}',
+
+  /* Mobile: keep all 3 buttons at same bottom:20px row */
   '@media(max-width:420px){',
     '#gabbi-win{left:0;right:0;bottom:0;width:100%;max-width:100%;border-radius:20px 20px 0 0;height:72vh;max-height:72vh}',
-    '#gabbi-btn{bottom:16px;left:16px}',
+    '#gabbi-btn{bottom:20px;left:16px;width:50px;height:50px;}',
+    '#gabbi-btn-inner{width:50px;height:50px;}',
   '}'
 ].join('');
 document.head.appendChild(s);
 
-// Inject HTML
+// Inject HTML — button uses inner wrapper div for clean avatar display
 var w = document.createElement('div');
 w.innerHTML = [
-  '<button id="gabbi-btn" onclick="gabbiToggle()">',
-    '<img src="' + AVATAR + '" alt="Gabbi">',
+  '<button id="gabbi-btn" onclick="gabbiToggle()" aria-label="Chat with Gabbi">',
+    '<div id="gabbi-btn-inner">',
+      '<img src="' + AVATAR + '" alt="Gabbi">',
+    '</div>',
     '<div id="gabbi-badge" class="hide">!</div>',
   '</button>',
   '<div id="gabbi-win">',
@@ -243,7 +265,7 @@ function send(text) {
   });
 }
 
-// Show badge after 4 seconds
+// Show badge after 4 seconds if chat not yet opened
 setTimeout(function() {
   if (!open) document.getElementById('gabbi-badge').classList.remove('hide');
 }, 4000);
