@@ -43,21 +43,6 @@
  '<nav><ul id="g-nav">'+
  '<li class="gni"><a href="'+SHOP+'" class="gnl" target="_blank">Shop <span class="gbg gbg-g">Order Now</span></a></li>'+
  '<li class="gni">'+
- '<a href="/grocery-delivery-areas" class="gnl">Delivery Areas <span class="garr">▾</span></a>'+
- '<ul class="gdrop">'+
- '<li><a href="/grocery-delivery-aberkenfig" class="gdl">Aberkenfig</a></li>'+
- '<li><a href="/grocery-delivery-porthcawl" class="gdl">Porthcawl</a></li>'+
- '<li><a href="/grocery-delivery-bridgend-town-centre" class="gdl">Bridgend Town Centre</a></li>'+
- '<li><a href="/grocery-delivery-bridgend" class="gdl">Bridgend</a></li>'+
- '<li><a href="/grocery-delivery-maesteg" class="gdl">Maesteg</a></li>'+
- '<li><a href="/grocery-delivery-tondu" class="gdl">Tondu</a></li>'+
- '<li><a href="/grocery-delivery-sarn" class="gdl">Sarn</a></li>'+
- '<li><a href="/grocery-delivery-pyle" class="gdl">Pyle</a></li>'+
- '<li><a href="/grocery-delivery-ogmore-vale" class="gdl">Ogmore Vale</a></li>'+
- '<li><a href="/grocery-delivery-pencoed" class="gdl">Pencoed <span class="gdb">Soon</span></a></li>'+
- '</ul>'+
- '</li>'+
- '<li class="gni">'+
  '<a href="/world-food-delivery" class="gnl">World Foods 🌍 <span class="garr">▾</span></a>'+
  '<ul class="gdrop">'+
  '<li><a href="/indian-grocery-delivery-uk" class="gdl">🇮🇳 Indian</a></li>'+
@@ -75,7 +60,22 @@
  '<li class="gni"><a href="/about-grabbi" class="gnl">About</a></li>'+
  '<li class="gni"><a href="/grabbi-sustainable-grocery-delivery" class="gnl">Sustainability</a></li>'+
  '<li class="gni"><a href="/grabbi-franchise-opportunity" class="gnl">Franchise <span class="gbg gbg-l">Join Us</span></a></li>'+
- '<li class="gni"><a href="/grabbi-stories" class="gnl">Blog</a></li>'+
+ '<li class="gni"><a href="/grabbi-stories" class="gnl">Grabbi Stories</a></li>'+
+ '<li class="gni">'+
+ '<a href="/grocery-delivery-areas" class="gnl">Delivery Areas <span class="garr">▾</span></a>'+
+ '<ul class="gdrop">'+
+ '<li><a href="/grocery-delivery-aberkenfig" class="gdl">Aberkenfig</a></li>'+
+ '<li><a href="/grocery-delivery-porthcawl" class="gdl">Porthcawl</a></li>'+
+ '<li><a href="/grocery-delivery-bridgend-town-centre" class="gdl">Bridgend Town Centre</a></li>'+
+ '<li><a href="/grocery-delivery-bridgend" class="gdl">Bridgend</a></li>'+
+ '<li><a href="/grocery-delivery-maesteg" class="gdl">Maesteg</a></li>'+
+ '<li><a href="/grocery-delivery-tondu" class="gdl">Tondu</a></li>'+
+ '<li><a href="/grocery-delivery-sarn" class="gdl">Sarn</a></li>'+
+ '<li><a href="/grocery-delivery-pyle" class="gdl">Pyle</a></li>'+
+ '<li><a href="/grocery-delivery-ogmore-vale" class="gdl">Ogmore Vale</a></li>'+
+ '<li><a href="/grocery-delivery-pencoed" class="gdl">Pencoed <span class="gdb">Soon</span></a></li>'+
+ '</ul>'+
+ '</li>'+
  '<li class="gni"><a href="/contact-grabbi" class="gnl">Contact</a></li>'+
  '</ul></nav>'+
  '<div id="g-act">'+
@@ -106,6 +106,28 @@
  '<div id="g-mn">'+
  '<a href="'+SHOP+'" class="gmr" target="_blank">Shop <span class="gbg gbg-g">Order Now</span></a>'+
  '<div class="gmd"></div>'+
+ '<div class="gmr" id="g-wft">🌍 World Foods <span id="g-wfa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
+ '<div class="gms" id="g-wfs">'+
+ '<a href="/indian-grocery-delivery" class="gmsl">🇮🇳 Indian</a>'+
+ '<a href="https://shop.grabbi.uk/category/chinese" class="gmsl">🇨🇳 Chinese</a>'+
+ '<a href="https://shop.grabbi.uk/category/filipino" class="gmsl">🇵🇭 Filipino</a>'+
+ '<a href="https://shop.grabbi.uk/category/sri-lankan" class="gmsl">🇱🇰 Sri Lankan</a>'+
+ '<a href="https://shop.grabbi.uk/category/caribbean" class="gmsl">🇯🇲 Caribbean</a>'+
+ '<a href="https://shop.grabbi.uk/category/african" class="gmsl">🌍 African</a>'+
+ '<a href="https://shop.grabbi.uk/category/japanese-korean" class="gmsl">🇯🇵 Japanese & Korean</a>'+
+ '<a href="https://shop.grabbi.uk/category/middle-eastern" class="gmsl">🇱🇧 Middle Eastern</a>'+
+ '<a href="https://shop.grabbi.uk/category/eastern-european" class="gmsl">🇵🇱 Eastern European</a>'+
+ '<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
+ '</div>'+
+ '<div class="gmd"></div>'+
+ '<a href="/about-grabbi" class="gmr">About</a>'+
+ '<div class="gmd"></div>'+
+ '<a href="/grabbi-sustainable-grocery-delivery" class="gmr">Sustainability</a>'+
+ '<div class="gmd"></div>'+
+ '<a href="/grabbi-franchise-opportunity" class="gmr">Franchise <span class="gbg gbg-l">Join Us</span></a>'+
+ '<div class="gmd"></div>'+
+ '<a href="/grabbi-stories" class="gmr">Grabbi Stories</a>'+
+ '<div class="gmd"></div>'+
  '<div class="gmr" id="g-at">Delivery Areas <span id="g-aa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
  '<div class="gms" id="g-as">'+
  '<a href="/grocery-delivery-aberkenfig" class="gmsl">Aberkenfig</a>'+
@@ -118,28 +140,6 @@
  '<a href="/grocery-delivery-ogmore-vale" class="gmsl">Ogmore Vale</a>'+
  '<a href="/grocery-delivery-pencoed" class="gmsl">Pencoed <span class="gbg gbg-l" style="margin-left:6px">Soon</span></a>'+
  '</div>'+
- '<div class="gmd"></div>'+
- '<div class="gmr" id="g-wft">🌍 World Foods <span id="g-wfa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
-'<div class="gms" id="g-wfs">'+
-'<a href="/indian-grocery-delivery" class="gmsl">🇮🇳 Indian</a>'+
-'<a href="https://shop.grabbi.uk/category/chinese" class="gmsl">🇨🇳 Chinese</a>'+
-'<a href="https://shop.grabbi.uk/category/filipino" class="gmsl">🇵🇭 Filipino</a>'+
-'<a href="https://shop.grabbi.uk/category/sri-lankan" class="gmsl">🇱🇰 Sri Lankan</a>'+
-'<a href="https://shop.grabbi.uk/category/caribbean" class="gmsl">🇯🇲 Caribbean</a>'+
-'<a href="https://shop.grabbi.uk/category/african" class="gmsl">🌍 African</a>'+
-'<a href="https://shop.grabbi.uk/category/japanese-korean" class="gmsl">🇯🇵 Japanese & Korean</a>'+
-'<a href="https://shop.grabbi.uk/category/middle-eastern" class="gmsl">🇱🇧 Middle Eastern</a>'+
-'<a href="https://shop.grabbi.uk/category/eastern-european" class="gmsl">🇵🇱 Eastern European</a>'+
-'<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
-'</div>'+
- '<div class="gmd"></div>'+
- '<a href="/about-grabbi" class="gmr">About</a>'+
- '<div class="gmd"></div>'+
- '<a href="/grabbi-sustainable-grocery-delivery" class="gmr">Sustainability</a>'+
- '<div class="gmd"></div>'+
- '<a href="/grabbi-franchise-opportunity" class="gmr">Franchise <span class="gbg gbg-l">Join Us</span></a>'+
- '<div class="gmd"></div>'+
- '<a href="/grabbi-stories" class="gmr">Blog</a>'+
  '<div class="gmd"></div>'+
  '<a href="/contact-grabbi" class="gmr">Contact</a>'+
  '<div class="gmd"></div>'+
@@ -207,7 +207,6 @@
  hbtn.addEventListener('click',function(){hbtn.classList.add('open');mm.classList.add('open');document.body.style.overflow='hidden';mm.scrollTop=0;});
  document.getElementById('g-mc').addEventListener('click',function(){
     hbtn.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';
-    // Reset all accordions when closing menu
     var wfs=document.getElementById('g-wfs');
     var wfa=document.getElementById('g-wfa');
     var gas=document.getElementById('g-as');
