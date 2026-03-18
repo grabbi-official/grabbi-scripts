@@ -121,7 +121,7 @@
  '<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
  '</div>'+
  '<div class="gmd"></div>'+
- '<a href="/healthy-food-delivery" class="gmr">Healthy Food 🥗</a>'+
+ '<a href="/healthy-food-delivery-bridgend" class="gmr">Healthy Food </a>'+
  '<div class="gmd"></div>'+
  '<a href="/about-grabbi" class="gmr">About</a>'+
  '<div class="gmd"></div>'+
