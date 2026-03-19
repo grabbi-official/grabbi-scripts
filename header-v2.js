@@ -57,7 +57,7 @@
  '<li><a href="/world-food-delivery" class="gdl" style="color:var(--gg);font-weight:700">All World Foods →</a></li>'+
  '</ul>'+
  '</li>'+
- '<li class="gni"><a href="/healthy-grocery-delivery-uk" class="gnl">Healthy Food </a></li>'+
+ '<li class="gni"><a href="/healthy-grocery-delivery-uk" class="gnl">Healthy Food 🥗</a></li>'+
  '<li class="gni"><a href="/about-grabbi" class="gnl">About</a></li>'+
  '<li class="gni"><a href="/grabbi-sustainable-grocery-delivery" class="gnl">Sustainability</a></li>'+
  '<li class="gni"><a href="/grabbi-franchise-opportunity" class="gnl">Franchise <span class="gbg gbg-l">Join Us</span></a></li>'+
@@ -121,7 +121,7 @@
  '<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
  '</div>'+
  '<div class="gmd"></div>'+
- '<a href="/healthy-grocery-delivery-uk" class="gmr">Healthy Food </a>'+
+ '<a href="/healthy-grocery-delivery-uk" class="gmr">Healthy Food 🥗</a>'+
  '<div class="gmd"></div>'+
  '<a href="/about-grabbi" class="gmr">About</a>'+
  '<div class="gmd"></div>'+
@@ -164,7 +164,6 @@
  while(wrap.firstChild){ document.body.insertBefore(wrap.firstChild,ref); }
  initHeader();
  }
- function isOpen(s){var now=new Date();var ukHour=parseInt(now.toLocaleString('en-GB',{timeZone:'Europe/London',hour:'numeric',hour12:false}));var ukMin=parseInt(now.toLocaleString('en-GB',{timeZone:'Europe/London',minute:'numeric'}));var ukTime=ukHour+ukMin/60;return ukTime>=s.open&&ukTime<s.close;}
  function initHeader(){
  var ann=34,hh=64,hs=52;
  var hdr=document.getElementById('g-header');
