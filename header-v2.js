@@ -255,13 +255,46 @@
  '@context':'https://schema.org','@graph':[
  {'@type':'GroceryStore','@id':'https://www.grabbi.uk/locations/aberkenfig',
  'name':'Grabbi — Aberkenfig',
- 'description':'Fast eco-friendly grocery delivery in South Wales. Free delivery over £25. Open 7am–10pm 7 days.',
+ 'description':'Fast eco-friendly grocery delivery in South Wales. Fresh meat, world foods, dairy and more delivered in as little as 30 minutes. Free delivery over £25. Open 7am–10pm 7 days.',
  'url':'https://www.grabbi.uk','telephone':'+447356011358','email':'hello@grabbi.uk',
  'image':'https://assets.zyrosite.com/WKfW2bGIcRiklr5N/grabbi-website-logo-y92jzvNAH3hunt99.webp',
  'address':{'@type':'PostalAddress','streetAddress':'Starlux Building, Bridgend Road','addressLocality':'Aberkenfig','addressRegion':'Bridgend, Wales','postalCode':'CF32 9BG','addressCountry':'GB'},
  'geo':{'@type':'GeoCoordinates','latitude':'51.5469','longitude':'-3.6024'},
  'openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],'opens':'07:00','closes':'22:00'}],
- 'priceRange':'£','areaServed':[{'@type':'City','name':'Aberkenfig'},{'@type':'City','name':'Bridgend'},{'@type':'City','name':'Porthcawl'},{'@type':'City','name':'Maesteg'}],
+ 'priceRange':'£',
+ 'areaServed':[
+   {'@type':'City','name':'Aberkenfig'},
+   {'@type':'City','name':'Bridgend'},
+   {'@type':'City','name':'Sarn'},
+   {'@type':'City','name':'Tondu'},
+   {'@type':'City','name':'Porthcawl'},
+   {'@type':'City','name':'Maesteg'},
+   {'@type':'City','name':'Pyle'},
+   {'@type':'City','name':'Ogmore Vale'},
+   {'@type':'City','name':'Pencoed'},
+   {'@type':'City','name':'South Wales'}
+ ],
+ 'hasMap':'https://maps.google.com/?q=Starlux+Building+Bridgend+Road+Aberkenfig+CF32+9BG',
+ 'sameAs':['https://www.instagram.com/grabbiuk','https://www.facebook.com/grabbiuk','https://www.tiktok.com/@grabbiuk']
+ },
+ {'@type':'GroceryStore','@id':'https://www.grabbi.uk/locations/porthcawl',
+ 'name':'Grabbi — Porthcawl',
+ 'description':'Grabbi grocery delivery launching in Porthcawl CF36 very soon. Authentic world foods, fresh produce, butcher meat and more. Sign up for early access.',
+ 'url':'https://www.grabbi.uk/delivery-areas/porthcawl','telephone':'+447356011358','email':'hello@grabbi.uk',
+ 'image':'https://assets.zyrosite.com/WKfW2bGIcRiklr5N/grabbi-website-logo-y92jzvNAH3hunt99.webp',
+ 'address':{'@type':'PostalAddress','streetAddress':'74 New Road','addressLocality':'Porthcawl','addressRegion':'Bridgend, Wales','postalCode':'CF36','addressCountry':'GB'},
+ 'geo':{'@type':'GeoCoordinates','latitude':'51.4826','longitude':'-3.6981'},
+ 'openingHoursSpecification':[{'@type':'OpeningHoursSpecification','dayOfWeek':['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],'opens':'07:00','closes':'22:00'}],
+ 'priceRange':'£',
+ 'areaServed':[{'@type':'City','name':'Porthcawl'},{'@type':'City','name':'CF36'}],
+ 'sameAs':['https://www.instagram.com/grabbiuk','https://www.facebook.com/grabbiuk','https://www.tiktok.com/@grabbiuk']
+ },
+ {'@type':'Organization',
+ 'name':'Grabbi Ltd',
+ 'url':'https://www.grabbi.uk',
+ 'logo':'https://assets.zyrosite.com/WKfW2bGIcRiklr5N/grabbi-website-logo-y92jzvNAH3hunt99.webp',
+ 'contactPoint':{'@type':'ContactPoint','telephone':'+447356011358','contactType':'customer service','email':'hello@grabbi.uk','availableLanguage':'English'},
+ 'address':{'@type':'PostalAddress','streetAddress':'Starlux Building, Bridgend Road','addressLocality':'Aberkenfig','addressRegion':'Bridgend, Wales','postalCode':'CF32 9BG','addressCountry':'GB'},
  'sameAs':['https://www.instagram.com/grabbiuk','https://www.facebook.com/grabbiuk','https://www.tiktok.com/@grabbiuk']
  }
  ]
