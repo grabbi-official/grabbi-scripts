@@ -43,7 +43,7 @@
  '<nav><ul id="g-nav">'+
  '<li class="gni"><a href="'+SHOP+'" class="gnl" target="_blank">Shop <span class="gbg gbg-g">Order Now</span></a></li>'+
  '<li class="gni">'+
- '<a href="/world-food-delivery" class="gnl">World Foods 🌍 <span class="garr">▾</span></a>'+
+ '<a href="/world-food-delivery-uk" class="gnl">World Foods 🌍 <span class="garr">▾</span></a>'+
  '<ul class="gdrop">'+
  '<li><a href="/indian-grocery-delivery-uk" class="gdl">🇮🇳 Indian</a></li>'+
  '<li><a href="/chinese-grocery-delivery-uk" class="gdl">🇨🇳 Chinese</a></li>'+
@@ -54,7 +54,7 @@
  '<li><a href="/japanese-korean-grocery-delivery-uk" class="gdl">🇯🇵 Japanese & Korean</a></li>'+
  '<li><a href="/middle-eastern-grocery-delivery-uk" class="gdl">🇱🇧 Middle Eastern</a></li>'+
  '<li><a href="/eastern-european-grocery-delivery-uk" class="gdl">🇵🇱 Eastern European</a></li>'+
- '<li><a href="/world-food-delivery" class="gdl" style="color:var(--gg);font-weight:700">All World Foods →</a></li>'+
+ '<li><a href="/world-food-delivery-uk" class="gdl" style="color:var(--gg);font-weight:700">All World Foods →</a></li>'+
  '</ul>'+
  '</li>'+
  '<li class="gni"><a href="/healthy-grocery-delivery-uk" class="gnl">Healthy Food 🥗</a></li>'+
@@ -65,15 +65,15 @@
  '<li class="gni">'+
  '<a href="/delivery-areas" class="gnl">Delivery Areas <span class="garr">▾</span></a>'+
  '<ul class="gdrop">'+
- '<li><a href="/delivery-areas/aberkenfig" class="gdl">🟢 Aberkenfig</a></li>'+
- '<li><a href="/delivery-areas/bridgend" class="gdl">🟢 Bridgend</a></li>'+
- '<li><a href="/delivery-areas/sarn" class="gdl">🟢 Sarn</a></li>'+
- '<li><a href="/delivery-areas/tondu" class="gdl">🟢 Tondu</a></li>'+
- '<li><a href="/delivery-areas/porthcawl" class="gdl">🟡 Porthcawl <span class="gdb">Soon</span></a></li>'+
- '<li><a href="/delivery-areas/maesteg" class="gdl">🔴 Maesteg</a></li>'+
- '<li><a href="/delivery-areas/pyle" class="gdl">🔴 Pyle</a></li>'+
- '<li><a href="/delivery-areas/ogmore-vale" class="gdl">🔴 Ogmore Vale</a></li>'+
- '<li><a href="/delivery-areas/pencoed" class="gdl">🔴 Pencoed</a></li>'+
+ '<li><a href="/grocery-delivery-aberkenfig" class="gdl">🟢 Aberkenfig</a></li>'+
+ '<li><a href="/grocery-delivery-bridgend" class="gdl">🟢 Bridgend</a></li>'+
+ '<li><a href="/grocery-delivery-sarn" class="gdl">🟢 Sarn</a></li>'+
+ '<li><a href="/grocery-delivery-tondu" class="gdl">🟢 Tondu</a></li>'+
+ '<li><a href="/grocery-delivery-porthcawl" class="gdl">🟡 Porthcawl <span class="gdb">Soon</span></a></li>'+
+ '<li><a href="/grocery-delivery-maesteg" class="gdl">🔴 Maesteg</a></li>'+
+ '<li><a href="/grocery-delivery-pyle" class="gdl">🔴 Pyle</a></li>'+
+ '<li><a href="/grocery-delivery-ogmore-vale" class="gdl">🔴 Ogmore Vale</a></li>'+
+ '<li><a href="/grocery-delivery-pencoed" class="gdl">🔴 Pencoed</a></li>'+
  '<li><a href="/delivery-areas" class="gdl" style="color:var(--gg);font-weight:700">All Areas →</a></li>'+
  '</ul>'+
  '</li>'+
@@ -118,7 +118,7 @@
  '<a href="/japanese-korean-grocery-delivery-uk" class="gmsl">🇯🇵 Japanese & Korean</a>'+
  '<a href="/middle-eastern-grocery-delivery-uk" class="gmsl">🇱🇧 Middle Eastern</a>'+
  '<a href="/eastern-european-grocery-delivery-uk" class="gmsl">🇵🇱 Eastern European</a>'+
- '<a href="/world-food-delivery" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
+ '<a href="/world-food-delivery-uk" class="gmsl" style="color:var(--gg);font-weight:700">All World Foods →</a>'+
  '</div>'+
  '<div class="gmd"></div>'+
  '<a href="/healthy-grocery-delivery-uk" class="gmr">Healthy Food 🥗</a>'+
@@ -133,15 +133,15 @@
  '<div class="gmd"></div>'+
  '<div class="gmr" id="g-at">Delivery Areas <span id="g-aa" style="font-size:11px;color:rgba(17,27,20,0.3)">▾</span></div>'+
  '<div class="gms" id="g-as">'+
- '<a href="/delivery-areas/aberkenfig" class="gmsl">🟢 Aberkenfig</a>'+
- '<a href="/delivery-areas/bridgend" class="gmsl">🟢 Bridgend</a>'+
- '<a href="/delivery-areas/sarn" class="gmsl">🟢 Sarn</a>'+
- '<a href="/delivery-areas/tondu" class="gmsl">🟢 Tondu</a>'+
- '<a href="/delivery-areas/porthcawl" class="gmsl">🟡 Porthcawl <span class="gbg gbg-l" style="margin-left:6px">Soon</span></a>'+
- '<a href="/delivery-areas/maesteg" class="gmsl">🔴 Maesteg</a>'+
- '<a href="/delivery-areas/pyle" class="gmsl">🔴 Pyle</a>'+
- '<a href="/delivery-areas/ogmore-vale" class="gmsl">🔴 Ogmore Vale</a>'+
- '<a href="/delivery-areas/pencoed" class="gmsl">🔴 Pencoed</a>'+
+ '<a href="/grocery-delivery-aberkenfig" class="gmsl">🟢 Aberkenfig</a>'+
+ '<a href="/grocery-delivery-bridgend" class="gmsl">🟢 Bridgend</a>'+
+ '<a href="/grocery-delivery-sarn" class="gmsl">🟢 Sarn</a>'+
+ '<a href="/grocery-delivery-tondu" class="gmsl">🟢 Tondu</a>'+
+ '<a href="/grocery-delivery-porthcawl" class="gmsl">🟡 Porthcawl <span class="gbg gbg-l" style="margin-left:6px">Soon</span></a>'+
+ '<a href="/grocery-delivery-maesteg" class="gmsl">🔴 Maesteg</a>'+
+ '<a href="/grocery-delivery-pyle" class="gmsl">🔴 Pyle</a>'+
+ '<a href="/grocery-delivery-ogmore-vale" class="gmsl">🔴 Ogmore Vale</a>'+
+ '<a href="/grocery-delivery-pencoed" class="gmsl">🔴 Pencoed</a>'+
  '<a href="/delivery-areas" class="gmsl" style="color:var(--gg);font-weight:700">All Areas →</a>'+
  '</div>'+
  '<div class="gmd"></div>'+
