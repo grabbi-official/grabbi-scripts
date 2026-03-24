@@ -1,5 +1,8 @@
 (function() {
 
+// Only run on grabbi.uk — not on shop.grabbi.uk
+if (window.location.hostname === 'shop.grabbi.uk') return;
+
 // Reads API key set in Hostinger custom code box
 var API_KEY = window.GABBI_KEY || '';
 
@@ -18,18 +21,13 @@ var s = document.createElement('style');
 s.textContent = [
   ':root{--gg:#1A5C35;--gl:#B5E550;--gd:#111B14;--gb:#FAF7F0}',
 
-  /* =====================================================
-     GABBI LAUNCHER BUTTON
-     FIX 1: bottom:20px to match basket + app btn baseline
-     FIX 2: white background with padding so logo never clips
-     FIX 3: removed bobbing animation (caused misalignment)
-     ===================================================== */
-  '#gabbi-btn{position:fixed;bottom:20px;left:20px;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;padding:0;',
+  // GABBI LAUNCHER BUTTON
+  // Sits above the app banner (80px) on mobile
+  '#gabbi-btn{position:fixed;bottom:96px;left:20px;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;padding:0;',
     'background:#fff;',
     'box-shadow:0 4px 20px rgba(26,92,53,0.35);z-index:2147483640;overflow:visible;',
     'transition:transform .25s,box-shadow .25s;}',
   '#gabbi-btn:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(26,92,53,0.5)}',
-  /* Inner circle — green ring with white pad so logo sits cleanly */
   '#gabbi-btn-inner{width:56px;height:56px;border-radius:50%;overflow:hidden;',
     'border:2.5px solid var(--gg);background:#fff;',
     'display:flex;align-items:center;justify-content:center;}',
@@ -42,8 +40,9 @@ s.textContent = [
   '#gabbi-badge.hide{display:none}',
   '@keyframes gabbi-ping{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}',
 
-  '#gabbi-win{position:fixed;bottom:88px;left:20px;width:calc(100vw - 40px);max-width:370px;',
-    'height:500px;max-height:calc(100vh - 120px);background:#fff;border-radius:20px;',
+  // Chat window — sits above the button
+  '#gabbi-win{position:fixed;bottom:164px;left:20px;width:calc(100vw - 40px);max-width:370px;',
+    'height:500px;max-height:calc(100vh - 200px);background:#fff;border-radius:20px;',
     'box-shadow:0 24px 64px rgba(17,27,20,0.18);z-index:2147483639;',
     'display:flex;flex-direction:column;overflow:hidden;',
     'transform:translateY(16px) scale(0.96);opacity:0;pointer-events:none;',
@@ -95,16 +94,22 @@ s.textContent = [
   '#gabbi-send:disabled{background:rgba(17,27,20,0.15);cursor:not-allowed}',
   '#gabbi-foot{text-align:center;font-size:10px;color:rgba(17,27,20,0.25);padding:5px 0 8px;flex-shrink:0}',
 
-  /* Mobile: keep all 3 buttons at same bottom:20px row */
+  // Mobile: full screen chat, button above app banner
   '@media(max-width:420px){',
     '#gabbi-win{left:0;right:0;bottom:0;width:100%;max-width:100%;border-radius:20px 20px 0 0;height:72vh;max-height:72vh}',
-    '#gabbi-btn{bottom:20px;left:16px;width:50px;height:50px;}',
+    '#gabbi-btn{bottom:88px;left:16px;width:50px;height:50px;}',
     '#gabbi-btn-inner{width:50px;height:50px;}',
+  '}',
+
+  // Desktop: back to normal low position
+  '@media(min-width:1024px){',
+    '#gabbi-btn{bottom:24px;}',
+    '#gabbi-win{bottom:92px;}',
   '}'
 ].join('');
 document.head.appendChild(s);
 
-// Inject HTML — button uses inner wrapper div for clean avatar display
+// Inject HTML
 var w = document.createElement('div');
 w.innerHTML = [
   '<button id="gabbi-btn" onclick="gabbiToggle()" aria-label="Chat with Gabbi">',
