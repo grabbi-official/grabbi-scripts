@@ -85,11 +85,11 @@
  '<div id="g-aw"><button class="gib" id="g-ab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></button>'+
  '<ul id="g-ad">'+
  '<li class="gah"><div class="gag">Welcome back 👋</div><div class="gas">Manage your account</div></li>'+
- '<li><a href="/account/orders" class="gal">📦 My Orders</a></li>'+
- '<li><a href="/account" class="gal">👤 My Account</a></li>'+
- '<li><a href="/account/points" class="gal">⭐ Loyalty Points</a></li>'+
- '<li><a href="/account/addresses" class="gal">📍 Saved Addresses</a></li>'+
- '<li><a href="/signout" class="gal">🚪 Sign Out</a></li>'+
+ '<li><a href="'+SHOP+'/account/orders" class="gal">📦 My Orders</a></li>'+
+'<li><a href="'+SHOP+'/account" class="gal">👤 My Account</a></li>'+
+'<li><a href="'+SHOP+'/account/loyalty" class="gal">🌱 Green Points</a></li>'+
+'<li><a href="'+SHOP+'/account/addresses" class="gal">📍 Saved Addresses</a></li>'+
+'<li><a href="'+SHOP+'/login" class="gal">🔐 Sign In / Register</a></li>'+
  '</ul>'+
  '</div>'+
  '<a href="'+SHOP+'/cart" class="gib" id="g-cb"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="gcb" id="g-cbadge" style="display:none">0</span></a>'+
@@ -147,7 +147,7 @@
  '<div class="gmd"></div>'+
  '<a href="/contact-grabbi" class="gmr">Contact</a>'+
  '<div class="gmd"></div>'+
- '<a href="/account" class="gmr">👤 My Account</a>'+
+ '<a href="'+SHOP+'/account" class="gmr">👤 My Account</a>'+
  '<a href="'+SHOP+'" target="_blank" class="gmcta">🛒 Order Now</a>'+
  '</div>'+
  '</div>'+
