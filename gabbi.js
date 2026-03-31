@@ -21,8 +21,6 @@ var s = document.createElement('style');
 s.textContent = [
   ':root{--gg:#1A5C35;--gl:#B5E550;--gd:#111B14;--gb:#FAF7F0}',
 
-  // GABBI LAUNCHER BUTTON
-  // Sits above the app banner (80px) on mobile
   '#gabbi-btn{position:fixed;bottom:96px;left:20px;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;padding:0;',
     'background:#fff;',
     'box-shadow:0 4px 20px rgba(26,92,53,0.35);z-index:2147483640;overflow:visible;',
@@ -40,7 +38,6 @@ s.textContent = [
   '#gabbi-badge.hide{display:none}',
   '@keyframes gabbi-ping{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}',
 
-  // Chat window — sits above the button
   '#gabbi-win{position:fixed;bottom:164px;left:20px;width:calc(100vw - 40px);max-width:370px;',
     'height:500px;max-height:calc(100vh - 200px);background:#fff;border-radius:20px;',
     'box-shadow:0 24px 64px rgba(17,27,20,0.18);z-index:2147483639;',
@@ -94,14 +91,12 @@ s.textContent = [
   '#gabbi-send:disabled{background:rgba(17,27,20,0.15);cursor:not-allowed}',
   '#gabbi-foot{text-align:center;font-size:10px;color:rgba(17,27,20,0.25);padding:5px 0 8px;flex-shrink:0}',
 
-  // Mobile: full screen chat, button above app banner
   '@media(max-width:420px){',
     '#gabbi-win{left:0;right:0;bottom:0;width:100%;max-width:100%;border-radius:20px 20px 0 0;height:72vh;max-height:72vh}',
     '#gabbi-btn{bottom:88px;left:16px;width:50px;height:50px;}',
     '#gabbi-btn-inner{width:50px;height:50px;}',
   '}',
 
-  // Desktop: back to normal low position
   '@media(min-width:1024px){',
     '#gabbi-btn{bottom:24px;}',
     '#gabbi-win{bottom:92px;}',
@@ -148,6 +143,20 @@ document.body.appendChild(w);
 var msgs = [], open = false, busy = false;
 var QR1 = ['🚚 Do you deliver to me?','🕐 What are your hours?','🌍 World Foods','🏪 Franchise info'];
 var QR2 = ['📞 Contact team','🛒 Shop now','💷 Delivery costs','⭐ Loyalty points'];
+
+// ── HUMAN TYPING DELAY ──────────────────────────────────────────
+// Minimum time the typing dots show (ms) — feels natural, not instant
+var MIN_TYPING_MS = 1500;
+// Extra ms per character in the reply — longer replies = longer pause
+var MS_PER_CHAR = 18;
+// Maximum cap so very long replies don't wait too long
+var MAX_TYPING_MS = 4000;
+
+function humanDelay(replyText) {
+  var calculated = MIN_TYPING_MS + (replyText.length * MS_PER_CHAR);
+  return Math.min(calculated, MAX_TYPING_MS);
+}
+// ────────────────────────────────────────────────────────────────
 
 function init() {
   addMsg('bot', 'Hey there! 👋 I\'m **Gabbi**, Grabbi\'s customer representative.\n\nI\'m here to help with anything — delivery, products, orders, world foods and more. What can I do for you today?');
@@ -232,6 +241,9 @@ function send(text) {
     return { role: m.role === 'user' ? 'user' : 'assistant', content: m.content };
   }).slice(-12);
 
+  // Track when the API call started
+  var fetchStart = Date.now();
+
   fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -249,24 +261,36 @@ function send(text) {
   })
   .then(function(r) { return r.json(); })
   .then(function(data) {
-    busy = false;
-    document.getElementById('gabbi-typing').classList.remove('show');
-    document.getElementById('gabbi-send').disabled = false;
     var reply = (data.content && data.content[0]) ? data.content[0].text : null;
-    if (reply) {
-      addMsg('bot', reply);
+    var replyText = reply || 'Sorry, something went wrong on my end! 😅 You can reach the team directly on WhatsApp at **+447356011358** or email **hello@grabbi.uk**';
+
+    // Calculate how long we've already been showing the typing indicator
+    var elapsed = Date.now() - fetchStart;
+    // Calculate the human-feeling delay based on reply length
+    var targetDelay = humanDelay(replyText);
+    // Only wait the remaining time needed — if API was slow, show immediately
+    var remaining = Math.max(0, targetDelay - elapsed);
+
+    setTimeout(function() {
+      busy = false;
+      document.getElementById('gabbi-typing').classList.remove('show');
+      document.getElementById('gabbi-send').disabled = false;
+      addMsg('bot', replyText);
       showQR(QR2);
-    } else {
-      addMsg('bot', 'Sorry, something went wrong on my end! 😅 You can reach the team directly on WhatsApp at **+447356011358** or email **hello@grabbi.uk**');
-    }
-    document.getElementById('gabbi-msgs').scrollTop = 9999;
+      document.getElementById('gabbi-msgs').scrollTop = 9999;
+    }, remaining);
   })
   .catch(function() {
-    busy = false;
-    document.getElementById('gabbi-typing').classList.remove('show');
-    document.getElementById('gabbi-send').disabled = false;
-    addMsg('bot', 'Oops, something went wrong! 😅 Please WhatsApp us at **+447356011358** or email **hello@grabbi.uk** and we\'ll help you straight away.');
-    document.getElementById('gabbi-msgs').scrollTop = 9999;
+    var elapsed = Date.now() - fetchStart;
+    var remaining = Math.max(0, MIN_TYPING_MS - elapsed);
+
+    setTimeout(function() {
+      busy = false;
+      document.getElementById('gabbi-typing').classList.remove('show');
+      document.getElementById('gabbi-send').disabled = false;
+      addMsg('bot', 'Oops, something went wrong! 😅 Please WhatsApp us at **+447356011358** or email **hello@grabbi.uk** and we\'ll help you straight away.');
+      document.getElementById('gabbi-msgs').scrollTop = 9999;
+    }, remaining);
   });
 }
 
