@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Grabbi Butchery — Orders Dashboard</title>
+<link rel="icon" href="data:image/webp;base64,UklGRhwFAABXRUJQVlA4WAoAAAAQAAAAPwAAPwAAQUxQSJsDAAABBlnYtp2N9CXdjmfWtm3btm3btm3bGtv22t4O1raVg/ZP/nTO9uj9I2IC8J+kwcHZyU6/3PNWLMfShpRj3upVzJVCABuPhV97mJ5275z32t6lJD1aKOZ7qKHC/qdo/5o4uwQ/SZQTZYUjyaUqVignhChVdct3bQA+HKouc7I1J0C2MQKwsa3q91fh/DgLn4qpL4UQK0j2eA7gaZr4oXBfS3wLuIYIEdiPpAUhIsg/QtHxZV5OGqUjf3VYRFoNbQYCqEJO3foz+wpPRcenOTRleaEA8KJGCvc/KWHHdu4+HZv+x2wWaa/QvJloWoCMjdu2Fq1E82ZNlvxTdWthdSey6FJt9hXlcVYO2m3OKSofDnck1XZD+xHfdnEJ8ZhCWBwXj6gbisqDuclKu5nSkbqYsD09TbxW2L8mkfXa2AkQABnSGtbvoaRVql7GrGJViYBqzSRV5sayFSuUL1fDxJpLgH39jjUFS/bYY7bVVyLYeMfn1tRV0RhoIJQ5c+78tabkULmIsXxJgtumUhVtaPPxUlXsqe9Uo6a8sxbMF/OuMb5WItifCOtZtm3h4q6JO46cO7/GfrVrzLmzBcfvC7voXmTqPm2WLzBOEFD9XBe5qaiwIaLrwdiB085N3B0/ql/ClkXxM3qG7ljlZcOn6BdL/1oQ0Oh6rVyJOHR6PQUuIxzx9F1AmBt2ai9hfPR+V04tFcuPXQjIE3OgWC3ffa4r6fTZvPlP+28PKp3zqNfy0NpZd3ptcTPyGcMIIvNeyQm+ifs8N1Lrc1F+4fvKxseFJ7fKHpCMpG6LfTgtZ2yzgKqzVk8s3bYe2bReO29wT+day9e1dREVFm/u5tK2l8xnO2OBJfbOdFOKSHuWbkLq02ePTEh5mu7LaTdjthYPheN1A5/tjCVaXHlckfksYxzMMCMZyXJGacr4XCSj5PtgCZP1u8xJjmPcdlDnxeOSxAfzGZiprt6A/sxecXqV/8H4WEOV2lKvGBd5SUEM3C3MJcdlRS+0Y+FqCQ7ZIxT9DFEspLbUVOGcYgVo8IuFn9uKqsoy441iFdiqAnh7uFOBTGbZ6q8yKer1cLmoBsD766Fe/slPFc16oOxTddx1Qf1XGQ21UzIaiobw+7P7hVXAZvorTg86OTyzDqDotjccXq7KSdmeWwtQeGbyD1Xi3MyCBGR/Z+G6NQByuaE7Qq6Z0h5eCd4+tLyBzJ194uOEwF7rsJjJwdneQP8pAgBWUDggWgEAABAKAJ0BKkAAQAA+gTaRSD+/oaE7+SwD8BAJQBlOCGHJtUbbPniNMg3kn/bEUjuoBvACQvdUzkJVEWtrkNr0r1TdHv4NjantLwGRV8zq8un/CSJ4Vnqz1vYAAP79mbz9R45FA0PuIXSDWL2kzCh506QvjT/O2xmb2S9VHn3h7x5OgZxOid8RLIuyO+9hkPr3gWFo2wxuo++Ie8YcyS4fSjlo4bP5pAKcKpJSa5XsAjpV9DlhNf43rdYLjRoT72NpyTbCBXTs8D2iuRvio8Nl16LsKGEEzcH6kFe5VJOA34y4/2i8iqVrCYW9ENmYH3JWRqWPTyUIMWM9/aX0PJvyTiaEMFNQIswgGi2VXga20KTqqGItLw/5BmKQCBRW8XIkvue/mJx4+9Cz/GF4x8NcRVBG58/56PC1Ebh+f/+LpLWW39zUhvO85gk/umSOcKsgxD5WhBPSTzJgAAA=">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2E6142;--g-dd:#132B1E;--g-l:#E6EFE8;--cream:#F7F3EA;--paper:#FFFDF8;--ink:#16231B;--mute:#5F6F64;--gold:#C8924A;--gold-l:#F3E3CB;--line:#DCD5C4;
+--s-new:#C8924A;--s-confirmed:#2F6FB0;--s-ready:#2E8A4F;--s-completed:#5F6F64;--s-cancelled:#B23A2E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;
+background-image:radial-gradient(circle at 1px 1px,rgba(46,97,66,.07) 1px,transparent 0);background-size:22px 22px;min-height:100vh}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select{font:inherit;color:inherit}
+.mono{font-family:"JetBrains Mono",monospace}
+.hide{display:none!important}
+
+/* LOGIN */
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:var(--g)}
+.login:before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.035) 46px 47px),radial-gradient(900px 400px at 85% 110%,rgba(200,146,74,.35),transparent 60%)}
+.lbox{position:relative;background:var(--paper);border-radius:22px;padding:34px 30px;width:100%;max-width:380px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.lbox img{height:46px;mix-blend-mode:multiply}
+.lbox h1{font-family:Fraunces;font-size:28px;margin:18px 0 4px}
+.lbox p{color:var(--mute);font-size:14px;margin-bottom:20px}
+.lbox input[type=password]{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:12px;font-family:"JetBrains Mono";font-size:16px;letter-spacing:.08em;outline:none;background:#fff}
+.lbox input:focus{border-color:var(--g)}
+.lbox label.chk{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--mute);margin:12px 0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:12px;font-weight:800;font-size:14px;transition:.15s}
+.btn.pri{background:var(--g);color:#fff;width:100%;padding:15px}
+.btn.pri:hover{background:#244f35}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.out{border:1.5px solid var(--line);background:#fff}
+.btn.out:hover{border-color:var(--ink)}
+.lerr{color:#B23A2E;font-size:13px;margin-top:10px;min-height:18px}
+
+/* TOP */
+.top{position:sticky;top:0;z-index:20;background:rgba(247,243,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1400px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+.top img{height:36px;mix-blend-mode:multiply}
+.top .ttl{font-family:Fraunces;font-size:20px;font-weight:800;padding-left:14px;border-left:1px solid var(--line)}
+.top .sp{flex:1}
+.live{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mute);font-family:"JetBrains Mono"}
+.live .dot{width:8px;height:8px;border-radius:50%;background:#2E8A4F;box-shadow:0 0 0 0 rgba(46,138,79,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(46,138,79,0)}100%{box-shadow:0 0 0 0 rgba(46,138,79,0)}}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:#fff;display:grid;place-items:center}
+.icon-btn:hover{border-color:var(--ink)}
+
+main{max-width:1400px;margin:auto;padding:20px}
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;position:relative;overflow:hidden}
+.kpi small{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.kpi b{display:block;font-family:Fraunces;font-size:32px;font-weight:800;margin-top:6px;line-height:1}
+.kpi span{font-size:12px;color:var(--mute)}
+.kpi.hot{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kpi.hot small,.kpi.hot span{color:rgba(255,255,255,.6)}
+.kpi.hot b{color:var(--gold)}
+
+.layout{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
+/* toolbar */
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{padding:8px 13px;border-radius:99px;font-size:13px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--mute);display:flex;gap:6px;align-items:center}
+.tabs button i{font-style:normal;font-family:"JetBrains Mono";font-size:11px;background:var(--cream);border-radius:99px;padding:1px 7px}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tabs button.on i{background:rgba(255,255,255,.15)}
+.search{flex:1;min-width:180px;padding:10px 14px;border:1px solid var(--line);border-radius:99px;background:#fff;outline:none}
+.search:focus{border-color:var(--g)}
+select.sel{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+
+/* orders */
+.orders{display:grid;gap:12px}
+.o{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;border-left:5px solid var(--sc,var(--line));animation:in .3s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.o.fresh{box-shadow:0 0 0 3px var(--gold-l)}
+.oh{display:flex;gap:14px;align-items:center;padding:14px 18px;cursor:pointer;flex-wrap:wrap}
+.oh .ref{font-family:"JetBrains Mono";font-weight:700;font-size:13px;color:var(--g)}
+.oh .who{font-weight:800;font-size:16px}
+.oh .meta{font-size:12.5px;color:var(--mute)}
+.oh .grow{flex:1;min-width:180px}
+.oh .amt{font-family:Fraunces;font-size:22px;font-weight:800;text-align:right}
+.oh .amt small{display:block;font-family:"JetBrains Mono";font-size:11px;color:var(--mute);font-weight:500}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:99px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--sc)}
+.tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11.5px;font-weight:700;background:var(--g-l);color:var(--g)}
+.tag.del{background:var(--gold-l);color:#7A5320}
+.ob{border-top:1px dashed var(--line);padding:16px 18px;display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.ob table{width:100%;border-collapse:collapse;font-size:14px}
+.ob th{text-align:left;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding:0 0 8px;font-weight:500}
+.ob td{padding:8px 0;border-top:1px dashed var(--line)}
+.ob td.r,.ob th.r{text-align:right;font-family:"JetBrains Mono"}
+.ob tfoot td{font-weight:800;border-top:2px solid var(--ink)}
+.info{display:grid;gap:8px;font-size:14px}
+.info div{display:grid;grid-template-columns:90px 1fr;gap:8px}
+.info dt{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:2px}
+.info a{color:var(--g);font-weight:700}
+.note{background:var(--gold-l);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.acts .st{padding:8px 12px;border-radius:10px;font-size:12.5px;font-weight:800;border:1.5px solid var(--sc);color:var(--sc);background:#fff}
+.acts .st.cur{background:var(--sc);color:#fff}
+.acts .wa{background:#25D366;color:#073B1C;padding:8px 12px;border-radius:10px;font-size:12.5px;font-weight:800;text-decoration:none}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:16px;padding:50px;text-align:center;color:var(--mute)}
+
+/* side */
+.side{position:sticky;top:76px;display:grid;gap:14px}
+.panel{background:var(--ink);color:#fff;border-radius:18px;overflow:hidden}
+.panel h3{font-family:Fraunces;font-size:20px;padding:16px 18px 4px}
+.panel p.s{font-size:12px;color:rgba(255,255,255,.55);padding:0 18px 10px}
+.prep{padding:0 18px 16px;max-height:52vh;overflow:auto}
+.prep div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.12);font-size:14px}
+.prep b{font-family:"JetBrains Mono";color:var(--gold)}
+.panel.light{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.panel.light p.s{color:var(--mute)}
+.tools{display:grid;gap:8px;padding:4px 18px 18px}
+
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;z-index:50;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.toast.show{transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;background:rgba(19,43,30,.6);display:grid;place-items:center;z-index:40;padding:16px}
+.mbox{background:var(--paper);border-radius:18px;padding:24px;max-width:380px;width:100%;display:grid;gap:10px}
+.mbox h3{font-family:Fraunces;font-size:22px}
+.mbox input{padding:12px;border:1.5px solid var(--line);border-radius:10px;font-family:"JetBrains Mono"}
+
+@media(max-width:1100px){.layout{grid-template-columns:1fr}.side{position:static}.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.kpis{grid-template-columns:repeat(2,1fr)}.ob{grid-template-columns:1fr}.top .ttl{display:none}.oh .amt{text-align:left}main{padding:12px}}
+@media print{.top,.bar,.side,.kpis,.acts{display:none!important}.o{break-inside:avoid;border:1px solid #999}.ob{display:grid!important}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<section class="login" id="login">
+  <form class="lbox" id="lf">
+    <img src="data:image/webp;base64,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" alt="Grabbi">
+    <h1>Orders Dashboard</h1>
+    <p>Grabbi Butchery — staff access only.</p>
+    <input type="password" id="pass" placeholder="Passcode" autocomplete="current-password" autofocus>
+    <label class="chk"><input type="checkbox" id="remember"> Remember on this device</label>
+    <button class="btn pri" id="lbtn">Open dashboard →</button>
+    <div class="lerr" id="lerr"></div>
+  </form>
+</section>
+
+<div id="app" class="hide">
+<header class="top"><div class="top-in">
+  <img src="data:image/webp;base64,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" alt="Grabbi"><span class="ttl">Butchery Orders</span>
+  <span class="sp"></span>
+  <span class="live"><span class="dot"></span><span id="upd">—</span></span>
+  <button class="icon-btn" title="Refresh" onclick="load(true)">↻</button>
+  <button class="icon-btn" title="Alerts" id="bell" onclick="toggleAlerts()">🔔</button>
+  <button class="icon-btn" title="Lock" onclick="logout()">⏻</button>
+</div></header>
+
+<main>
+  <section class="kpis">
+    <div class="kpi hot"><small>New — to action</small><b id="kNew">0</b><span>awaiting confirmation</span></div>
+    <div class="kpi"><small>Today</small><b id="kToday">0</b><span id="kTodayV">£0.00</span></div>
+    <div class="kpi"><small>Open kg to prep</small><b id="kKg">0</b><span>new + confirmed</span></div>
+    <div class="kpi"><small>Last 7 days</small><b id="kWeek">£0</b><span id="kWeekN">0 orders</span></div>
+    <div class="kpi"><small>Avg order</small><b id="kAvg">£0</b><span>excl. cancelled</span></div>
+  </section>
+
+  <div class="layout">
+    <section>
+      <div class="bar">
+        <div class="tabs" id="tabs"></div>
+      </div>
+      <div class="bar">
+        <input class="search" id="q" placeholder="Search name, phone, ref, product…">
+        <select class="sel" id="fStore"><option value="">All stores</option><option value="Aberkenfig">Aberkenfig</option><option value="Porthcawl">Porthcawl</option><option value="delivery">Delivery</option></select>
+        <select class="sel" id="fDays"><option value="7">7 days</option><option value="30">30 days</option><option value="60" selected>60 days</option><option value="365">1 year</option></select>
+      </div>
+      <div class="orders" id="list"></div>
+    </section>
+
+    <aside class="side">
+      <div class="panel">
+        <h3>Butcher’s prep list</h3>
+        <p class="s">Total to cut across new + confirmed orders</p>
+        <div class="prep" id="prep"></div>
+      </div>
+      <div class="panel light">
+        <h3>Tools</h3>
+        <p class="s">Exports use the current filter</p>
+        <div class="tools">
+          <button class="btn out" onclick="csv()">⬇ Export CSV</button>
+          <button class="btn out" onclick="printView()">🖨 Print order slips</button>
+          <button class="btn out" onclick="openPass()">🔑 Change passcode</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+</div>
+
+<div class="modal hide" id="pm"><div class="mbox">
+  <h3>Change passcode</h3>
+  <input type="password" id="np1" placeholder="New passcode (min 8)">
+  <input type="password" id="np2" placeholder="Repeat new passcode">
+  <div class="lerr" id="perr"></div>
+  <button class="btn pri" onclick="changePass()">Save</button>
+  <button class="btn out" onclick="$('pm').classList.add('hide')">Cancel</button>
+</div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SB="https://qahpwpwncqiwwivmtdyr.supabase.co",KEY="sb_publishable_34SwXJPoxQGgdDkbu9Qx_Q_52UGazxI";
+const ST=["new","confirmed","ready","completed","cancelled"];
+const SC={new:"var(--s-new)",confirmed:"var(--s-confirmed)",ready:"var(--s-ready)",completed:"var(--s-completed)",cancelled:"var(--s-cancelled)"};
+const $=id=>document.getElementById(id);
+const M=n=>"£"+(+n).toFixed(2);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fq=(q,u)=>u==="kg"?(+(+q).toFixed(2))+" kg":q+" "+u+(+q>1?"s":"");
+let PASS="",ORD=[],tab="new",open=new Set(),seen=null,alerts=false,timer=null;
+
+const ss={get(k){try{return sessionStorage.getItem(k)||localStorage.getItem(k)}catch(e){return null}},
+  set(k,v,rem){try{(rem?localStorage:sessionStorage).setItem(k,v)}catch(e){}},
+  del(k){try{sessionStorage.removeItem(k);localStorage.removeItem(k)}catch(e){}}};
+
+async function rpc(fn,args){
+  const r=await fetch(`${SB}/rest/v1/rpc/${fn}`,{method:"POST",headers:{apikey:KEY,Authorization:"Bearer "+KEY,"Content-Type":"application/json"},body:JSON.stringify(args)});
+  const j=await r.json(); if(!r.ok)throw new Error(j.message||"Request failed"); if(j&&j.ok===false)throw new Error(j.error); return j;
+}
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("show"),2600)}
+function ago(d){const s=(Date.now()-new Date(d))/1000;if(s<60)return"just now";if(s<3600)return Math.floor(s/60)+"m ago";if(s<86400)return Math.floor(s/3600)+"h ago";return Math.floor(s/86400)+"d ago"}
+function fdt(d){return new Date(d).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}
+
+$("lf").addEventListener("submit",async e=>{
+  e.preventDefault();$("lerr").textContent="";$("lbtn").textContent="Checking…";
+  try{PASS=$("pass").value.trim();await fetchOrders();ss.set("grb_admin",PASS,$("remember").checked);enter()}
+  catch(x){$("lerr").textContent=x.message}finally{$("lbtn").textContent="Open dashboard →"}
+});
+function enter(){$("login").classList.add("hide");$("app").classList.remove("hide");render();clearInterval(timer);timer=setInterval(()=>load(false),30000)}
+function logout(){ss.del("grb_admin");PASS="";clearInterval(timer);location.reload()}
+
+async function fetchOrders(){
+  const j=await rpc("admin_meat_orders",{pass:PASS,since_days:+$("fDays").value});
+  const prev=seen; ORD=j.orders||[];
+  const ids=new Set(ORD.map(o=>o.order_ref));
+  if(prev){const fresh=ORD.filter(o=>!prev.has(o.order_ref));if(fresh.length)notify(fresh)}
+  seen=ids; $("upd").textContent="Updated "+new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});
+}
+async function load(manual){try{await fetchOrders();render();if(manual)toast("Refreshed")}catch(x){if(/passcode|attempts/i.test(x.message)){logout()}else if(manual)toast(x.message)}}
+
+function notify(fresh){
+  fresh.forEach(o=>open.add(o.order_ref));
+  toast(`🔔 ${fresh.length} new order${fresh.length>1?"s":""}`);
+  try{const c=new (window.AudioContext||window.webkitAudioContext)();[0,.18].forEach(t=>{const o=c.createOscillator(),g=c.createGain();o.frequency.value=880;o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.2,c.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+t+.15);o.start(c.currentTime+t);o.stop(c.currentTime+t+.16)})}catch(e){}
+  if(alerts&&"Notification"in window&&Notification.permission==="granted")fresh.forEach(o=>new Notification("New Grabbi order "+o.order_ref,{body:`${o.customer_name} — ${M(o.total)}`}));
+  document.title=`(${fresh.length}) New order — Grabbi`;setTimeout(()=>document.title="Grabbi Butchery — Orders Dashboard",8000);
+}
+async function toggleAlerts(){
+  if(!("Notification"in window))return toast("Browser alerts not supported here — sound alerts are on");
+  const p=await Notification.requestPermission();alerts=p==="granted";
+  $("bell").style.background=alerts?"var(--gold-l)":"#fff";toast(alerts?"Desktop alerts on":"Alerts blocked in browser settings");
+}
+
+function filtered(){
+  const q=$("q").value.toLowerCase().trim(),st=$("fStore").value;
+  return ORD.filter(o=>{
+    if(tab!=="all"&&o.status!==tab)return false;
+    if(st==="delivery"&&o.fulfilment!=="delivery")return false;
+    if(st&&st!=="delivery"&&!(o.store||"").includes(st))return false;
+    if(q){const h=[o.order_ref,o.customer_name,o.phone,o.email,o.postcode,o.address,...(o.items||[]).map(i=>i.name)].join(" ").toLowerCase();if(!h.includes(q))return false}
+    return true});
+}
+function render(){
+  // KPIs
+  const now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()),w0=Date.now()-7*864e5;
+  const live=ORD.filter(o=>o.status!=="cancelled");
+  const today=live.filter(o=>new Date(o.created_at)>=t0),week=live.filter(o=>+new Date(o.created_at)>=w0);
+  const openO=ORD.filter(o=>o.status==="new"||o.status==="confirmed");
+  $("kNew").textContent=ORD.filter(o=>o.status==="new").length;
+  $("kToday").textContent=today.length;$("kTodayV").textContent=M(today.reduce((a,o)=>a+ +o.total,0));
+  let kg=0;const prep={};openO.forEach(o=>(o.items||[]).forEach(i=>{const k=i.name+"|"+i.unit;prep[k]=(prep[k]||0)+ +i.qty;if(i.unit==="kg")kg+= +i.qty}));
+  $("kKg").textContent=+kg.toFixed(1);
+  $("kWeek").textContent="£"+Math.round(week.reduce((a,o)=>a+ +o.total,0));$("kWeekN").textContent=week.length+" orders";
+  $("kAvg").textContent=live.length?"£"+(live.reduce((a,o)=>a+ +o.total,0)/live.length).toFixed(0):"£0";
+  // prep
+  const pk=Object.entries(prep).sort((a,b)=>b[1]-a[1]);
+  $("prep").innerHTML=pk.length?pk.map(([k,v])=>{const[n,u]=k.split("|");return`<div><span>${esc(n)}</span><b>${fq(+v.toFixed(2),u)}</b></div>`}).join(""):'<div style="color:rgba(255,255,255,.5)">Nothing to prep 🎉</div>';
+  // tabs
+  const cnt=s=>s==="all"?ORD.length:ORD.filter(o=>o.status===s).length;
+  $("tabs").innerHTML=["new","confirmed","ready","completed","cancelled","all"].map(s=>`<button class="${s===tab?"on":""}" data-t="${s}">${s[0].toUpperCase()+s.slice(1)} <i>${cnt(s)}</i></button>`).join("");
+  // list
+  const L=filtered();
+  $("list").innerHTML=L.length?L.map(card).join(""):`<div class="empty">No ${tab==="all"?"":tab+" "}orders${$("q").value?" match your search":""}.</div>`;
+}
+function card(o){
+  const isOpen=open.has(o.order_ref),sc=SC[o.status];
+  const items=o.items||[],kg=items.filter(i=>i.unit==="kg").reduce((a,i)=>a+ +i.qty,0);
+  const ph=String(o.phone||"").replace(/\D/g,"").replace(/^0/,"44");
+  const msg=encodeURIComponent(`Hi ${o.customer_name}, this is Grabbi about your order ${o.order_ref}. `);
+  return `<article class="o ${o.status==="new"&&Date.now()-new Date(o.created_at)<36e5?"fresh":""}" style="--sc:${sc}">
+  <div class="oh" data-o="${esc(o.order_ref)}">
+    <span class="chip">${o.status}</span>
+    <div class="grow"><div class="who">${esc(o.customer_name)} <span class="ref">${esc(o.order_ref)}</span></div>
+      <div class="meta">${fdt(o.created_at)} · ${ago(o.created_at)} · ${items.length} line${items.length>1?"s":""}${kg?" · "+(+kg.toFixed(1))+" kg":""}</div></div>
+    <span class="tag ${o.fulfilment==="delivery"?"del":""}">${o.fulfilment==="delivery"?"🚚 Delivery":"🏪 "+esc((o.store||"").replace("Grabbi ","").split(" —")[0])}</span>
+    ${o.preferred_date?`<span class="tag">📅 ${new Date(o.preferred_date).toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})}</span>`:""}
+    <div class="amt">${M(o.total)}<small>${isOpen?"▲ hide":"▼ details"}</small></div>
+  </div>
+  <div class="ob ${isOpen?"":"hide"}">
+    <div><table><thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Price</th><th class="r">Line</th></tr></thead><tbody>
+      ${items.map(i=>`<tr><td>${esc(i.name)}</td><td class="r">${fq(i.qty,i.unit)}</td><td class="r">${M(i.unit_price)}</td><td class="r">${M(i.line_total)}</td></tr>`).join("")}
+      </tbody><tfoot><tr><td colspan="3">Estimated total</td><td class="r">${M(o.total)}</td></tr></tfoot></table></div>
+    <div><dl class="info">
+      <div><dt>Phone</dt><dd><a href="tel:${esc(o.phone)}">${esc(o.phone)}</a></dd></div>
+      ${o.email?`<div><dt>Email</dt><dd><a href="mailto:${esc(o.email)}">${esc(o.email)}</a></dd></div>`:""}
+      <div><dt>${o.fulfilment==="delivery"?"Deliver to":"Collect"}</dt><dd>${o.fulfilment==="delivery"?esc(o.address)+", "+esc(o.postcode):esc(o.store)}</dd></div>
+      ${o.preferred_date?`<div><dt>Wanted</dt><dd>${new Date(o.preferred_date).toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})}</dd></div>`:""}
+      ${o.notes?`<div><dt>Notes</dt><dd class="note">${esc(o.notes)}</dd></div>`:""}
+    </dl>
+    <div class="acts">${ST.map(s=>`<button class="st ${s===o.status?"cur":""}" style="--sc:${SC[s]}" data-ref="${esc(o.order_ref)}" data-s="${s}">${s[0].toUpperCase()+s.slice(1)}</button>`).join("")}
+      <a class="wa" target="_blank" rel="noopener" href="https://wa.me/${ph}?text=${msg}">WhatsApp customer</a></div>
+    </div>
+  </div></article>`;
+}
+
+document.addEventListener("click",async e=>{
+  const t=e.target.closest("[data-t]");if(t){tab=t.dataset.t;render();return}
+  const s=e.target.closest(".st");
+  if(s){const ref=s.dataset.ref,ns=s.dataset.s;s.textContent="…";
+    try{const j=await rpc("admin_meat_order_status",{pass:PASS,ref,new_status:ns});const i=ORD.findIndex(o=>o.order_ref===ref);ORD[i]=j.order;render();toast(`${ref} → ${ns}`)}
+    catch(x){toast(x.message);render()}return}
+  const h=e.target.closest(".oh");if(h){const r=h.dataset.o;open.has(r)?open.delete(r):open.add(r);render()}
+});
+$("q").addEventListener("input",render);$("fStore").addEventListener("change",render);$("fDays").addEventListener("change",()=>load(true));
+
+function csv(){
+  const rows=[["Ref","Date","Status","Name","Phone","Email","Fulfilment","Store","Address","Postcode","Preferred date","Item","Qty","Unit","Unit price","Line total","Order total","Notes"]];
+  filtered().forEach(o=>(o.items||[]).forEach(i=>rows.push([o.order_ref,new Date(o.created_at).toLocaleString("en-GB"),o.status,o.customer_name,o.phone,o.email,o.fulfilment,o.store,o.address,o.postcode,o.preferred_date,i.name,i.qty,i.unit,i.unit_price,i.line_total,o.total,o.notes])));
+  const b=new Blob([rows.map(r=>r.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\n")],{type:"text/csv"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`grabbi-orders-${new Date().toISOString().slice(0,10)}.csv`;a.click();
+}
+function printView(){filtered().forEach(o=>open.add(o.order_ref));render();setTimeout(()=>window.print(),100)}
+function openPass(){$("np1").value=$("np2").value="";$("perr").textContent="";$("pm").classList.remove("hide")}
+async function changePass(){
+  const a=$("np1").value,b=$("np2").value;if(a.length<8)return $("perr").textContent="At least 8 characters";if(a!==b)return $("perr").textContent="Passcodes don't match";
+  try{await rpc("admin_meat_change_pass",{pass:PASS,new_pass:a});PASS=a;ss.del("grb_admin");ss.set("grb_admin",a,false);$("pm").classList.add("hide");toast("Passcode changed")}catch(x){$("perr").textContent=x.message}
+}
+(async()=>{const p=ss.get("grb_admin");if(p){PASS=p;try{await fetchOrders();enter()}catch(e){ss.del("grb_admin")}}})();
+</script>
+</body>
+</html>
