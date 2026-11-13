@@ -1,0 +1,28 @@
+name: pack-run4
+on:
+  push:
+    branches: [ref-photos-run4]
+    paths: [r4-manifest.csv, .github/workflows/pack-run4.yml]
+permissions:
+  contents: write
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download renders
+        run: |
+          mkdir -p out
+          python3 - <<'PY'
+          import csv,os,urllib.request
+          for r in csv.DictReader(open('r4-manifest.csv')):
+              p=os.path.join('out',r['file']); os.makedirs(os.path.dirname(p) or 'out',exist_ok=True)
+              urllib.request.urlretrieve(r['render_url'],p)
+          PY
+          cp r4-manifest.csv out/barcode-map.csv
+          cd out && zip -qr ../grabbi-packshots-run4.zip . && cd ..
+          ls -la grabbi-packshots-run4.zip
+      - name: Commit zip
+        run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add grabbi-packshots-run4.zip && git commit -m "Packed run4 renders" && git push
